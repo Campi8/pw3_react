@@ -1,10 +1,10 @@
-import { useState } from 'react'
 import banner1 from './assets/img/1.png';
 import BannerControle from './components/BannerControle';
 import './App.css'
+import GestorDados from './components/GestorDados';
+import ListaDados from './components/ListaDados';
 
 function App() {
-  const [count, setCount] = useState(0)
   const w=600
   const h=240
   return (
@@ -18,6 +18,12 @@ function App() {
         </div>
         <div>
           <BannerControle />
+        </div>
+        <div>
+          <GestorDados />
+        </div>
+        <div>
+          <ListaDados /> 
         </div>
       </div>
     </>

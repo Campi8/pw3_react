@@ -1,4 +1,4 @@
-import banner2 from '../assets/img/2.png'
+import banner2 from '../assets/img/3.png'
 
 const BannerControle = () => {
     const imgPadrao = {
