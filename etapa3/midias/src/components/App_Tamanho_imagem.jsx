@@ -6,26 +6,18 @@ const AppTamanhoImagem = () => {
         w: 600,
         h: 240
     }
-
-    const [altura, SetAltura] = useState(imgPadrao.h)
-    const [largura, SetLargura] = useState(imgPadrao.w)
-
-    
+    const [lagura, setLargura] = useState(imgPadrao.w)
+    const [altura, setAltura] = useState(imgPadrao.h)
     return(
-
         <div>
-            <img src={banner3} alt="Banner de promoções 3" width={imgPadrao.w} height={imgPadrao.h} />
-
-            
+            <img src={banner3} alt="Banner de promoções 2" width={lagura} height={altura} />
             <div>
-            <button onClick={() => SetLargura(largura+10)}> Alargar  <button> || </button> onClick={() => SetAltura(largura-10)} </button>
-            <button onClick={() => SetAltura(altura+10)}> Ampliar  <button> || </button> onClick={() => SetAltura(altura-10)} </button>
+                <span>Largura: {lagura}</span> || <span>Altura: {altura}</span>
             </div>
-
             <div>
-                <span> Largura: {imgPadrao.w} </span> || <span> Altura: {imgPadrao.h}</span>
+                <button onClick={()=> setLargura(lagura+10)}>Alargar</button> || <button onClick={()=> setLargura(lagura-10)}>Estreitar</button>
+                <button onClick={()=> setAltura(altura+10)}>Ampliar</button>  || <button onClick={()=> setAltura(altura-10)}>Reduzir</button>
             </div>
-
         </div>
     )
 }

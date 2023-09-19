@@ -26,7 +26,7 @@ function App() {
         <div>
           <ListaDados /> 
           <div>
-            <AppTamanhoImagem/>
+            <AppTamanhoImagem />
           </div>
         </div>
       </div>
