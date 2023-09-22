@@ -1,9 +1,10 @@
 import React from 'react'
+import './ListaFragmentos.css'
 
-const ListaFragmentos = (motos) => {
+const ListaFragmentos = ({ motos }) => {
   return (
     <>
-    <table>
+    <table className='lf-table'>
         <tr>
             <th>Marca</th>
             <th>Modelo</th>
@@ -11,15 +12,22 @@ const ListaFragmentos = (motos) => {
             <th>Usado</th>
             <th>Ano</th>
         </tr>
-        {motos.map((itemMoto) => {
+          {motos.map((itemMoto) => {
+            return(
             <tr>
-                <tr key={itemMoto.id}/>
-                <td>{itemMoto.marca}</td>
-                <td>{itemMoto.modelo}</td>
-                <td>{itemMoto.km}</td>
-                <td>{itemMoto.usado ? "Usado": "Novo" }</td>
-                <td>{itemMoto.ano}</td>
+              <tr key={itemMoto.id} style =
+              {
+                  itemMoto.id % 2 === 0 ?
+                {backgroundColor: "#ccc", color: "#000"}: null
+                }/>
+
+              <td>{itemMoto.marca}</td>
+              <td>{itemMoto.modelo}</td>
+              <td>{itemMoto.km}</td>
+              <td>{itemMoto.usado ? "Usado": "Novo" }</td>
+              <td>{itemMoto.ano}</td>
             </tr>
+          )
         })}
     </table>
     </>
