@@ -1,10 +1,10 @@
 import React from 'react'
-import './ListaFragmentos.css'
+import styles from "./ListaFragmentos.module.css"
 
 const ListaFragmentos = ({ motos }) => {
   return (
     <>
-    <table className='lf-table'>
+    <table className = {styles.lf_table}>
         <tr>
             <th>Marca</th>
             <th>Modelo</th>
@@ -17,15 +17,19 @@ const ListaFragmentos = ({ motos }) => {
             <tr>
               <tr key={itemMoto.id} style =
               {
-                  itemMoto.id % 2 === 0 ?
+                itemMoto.id % 2 === 0 ?
                 {backgroundColor: "#ccc", color: "#000"}: null
                 }/>
 
               <td>{itemMoto.marca}</td>
               <td>{itemMoto.modelo}</td>
               <td>{itemMoto.km}</td>
-              <td>{itemMoto.usado ? "Usado": "Novo" }</td>
-              <td>{itemMoto.ano}</td>
+              <td className={
+                itemMoto.usado ? styles.lf_red : styles.lf_green
+              }>{itemMoto.usado ? "Usado" : "Novo" }</td>
+              <td className={
+                itemMoto.ano > 2005 ? styles.lf_blue : styles.lf_yellow
+              }>{itemMoto.ano}</td>
             </tr>
           )
         })}
